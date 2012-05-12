@@ -1,1 +1,19 @@
+@import "../3rd/normalize.min.css";
+
 @import "_jam-reset/_jam-reset.css";
+
+@import "b-button/b-button.css";
+
+.clear,
+.clearleft {
+	float: none;
+	clear: left;
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 0;
+	font: 0/0 d;
+}
+
+.clear { clear: both }
