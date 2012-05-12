@@ -134,32 +134,6 @@ AddType application/x-shockwave-flash       swf
 
 
 # ----------------------------------------------------------------------
-# Allow concatenation from within specific js and css files
-# ----------------------------------------------------------------------
-
-# e.g. Inside of script.combined.js you could have
-#   <!--#include file="libs/jquery-1.5.0.min.js" -->
-#   <!--#include file="plugins/jquery.idletimer.js" -->
-# and they would be included into this single file.
-
-# This is not in use in the boilerplate as it stands. You may
-# choose to name your files in this way for this advantage or
-# concatenate and minify them manually.
-# Disabled by default.
-
-#<FilesMatch "\.combined\.js$">
-#  Options +Includes
-#  AddOutputFilterByType INCLUDES application/javascript application/json
-#  SetOutputFilter INCLUDES
-#</FilesMatch>
-#<FilesMatch "\.combined\.css$">
-#  Options +Includes
-#  AddOutputFilterByType INCLUDES text/css
-#  SetOutputFilter INCLUDES
-#</FilesMatch>
-
-
-# ----------------------------------------------------------------------
 # Gzip compression
 # ----------------------------------------------------------------------
 
@@ -224,7 +198,7 @@ AddType application/x-shockwave-flash       swf
   ExpiresActive on
 
 # Perhaps better to whitelist expires rules? Perhaps.
-  ExpiresDefault                          "access plus 1 month"
+  ExpiresDefault                          "access plus 1 week"
 
 # cache.appcache needs re-requests in FF 3.6 (thanks Remy ~Introducing HTML5)
   ExpiresByType text/cache-manifest       "access plus 0 seconds"
@@ -265,8 +239,8 @@ AddType application/x-shockwave-flash       swf
   ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
 
 # CSS and JavaScript
-  ExpiresByType text/css                  "access plus 1 year"
-  ExpiresByType application/javascript    "access plus 1 year"
+  ExpiresByType text/css                  "access plus 1 week"
+  ExpiresByType application/javascript    "access plus 1 week"
 
 </IfModule>
 
@@ -428,7 +402,7 @@ Options -MultiViews
 # You can add custom pages to handle 500 or 403 pretty easily, if you like.
 # If you are hosting your site in subdirectory, adjust this accordingly
 #    e.g. ErrorDocument 404 /subdir/404.html
-ErrorDocument 404 /404.html
+#ErrorDocument 404 /404.html
 
 
 
