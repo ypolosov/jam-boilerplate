@@ -1,0 +1,15 @@
+baseFontSize   = 1em;
+baseFontFamily = sans-serif;
+baseLineHeight = 1.4;
+baseTextColor  = #222;
+
+
+linkNormal  = #00e;
+linkVisited = #551a8b;
+linkActive  = #06e;
+linkHover   = #06e;
+
+formsValid   = #f0dddd;
+formsInvalid = #f0dddd;
+
+selectionBG = #b3d4fc;
