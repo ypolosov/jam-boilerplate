@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     },
     // concat css/**/*.css files, inline @import, output a single minified css
     css: {
-      'blocks/__all.css': ['blocks/**/*.css']
+      'blocks/__style.css': ['blocks/**/*.css']
     },
     // Renames JS/CSS to prepend a hash of their contents for easier
     // versioning
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     
     meta: {
       version: '0.1.0',
-      banner: '/*! PROJECT_NAME - v<%= meta.version %> - ' +
+      banner: '/*! JAM-BOILERPLATE - v<%= meta.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
         '* http://PROJECT_WEBSITE/\n' +
         '* Copyright (c) <%= grunt.template.today("yyyy") %> ' +
