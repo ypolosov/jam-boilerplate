@@ -2,7 +2,8 @@ baseFontSize   = 1em;
 baseFontFamily = fontSans;
 baseLineHeight = 1.4;
 baseTextColor  = #000;
-
+baseBackground = #fff;
+baseHrColor    = #ccc;
 
 fontSerif = serif;
 fontSans  = Helvetica, Arial, sans-serif;
@@ -24,9 +25,13 @@ selectionBG = #b3d4fc;
 
 // Grid
 
-gridColumns =	  12;
+gridColumns = 12;
+
 gridColumnWidth = 60px;
 gridGutterWidth	= 20px;
+
+fluidGridMimWidth = 1000px;
+fluidGridMaxWidth = 1440px;
 
 fluidGridColumnWidth = 6.382978723%;
 fluidGridGutterWidth = 2.127659574%;
@@ -73,3 +78,20 @@ textH6FontSize   = 14px;
 textH6LineHeight = baseLineHeight;
 textH6FontWeight = textHeaderFontWeight;
 textH6Color      = textHeaderColor;
+
+
+// b-rub: ruble symbol
+
+// select desired types for given fonts
+
+rubArial   = (arial bold italic bolditalic regular)
+rubGeorgia = (georgia bold italic bolditalic regular)
+rubTahoma  = (tahoma bold regular)
+rubTimes   = (bold italic bolditalic regular)
+rubVerdana = (bold italic bolditalic regular)
+
+// select desired font to include
+
+rubFonts = (rubArial rubGeorgia rubTahoma rubTimes rubVerdana)
+
+

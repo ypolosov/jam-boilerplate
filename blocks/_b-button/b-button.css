@@ -1,0 +1,16 @@
+.b-button {
+	padding: 0 10px 0 40px;
+	height: 28px;
+	background: #71b1aa url(b-button.png) 6px center no-repeat;
+	-webkit-box-shadow: 4px 3px #5e8a7d;
+	   -moz-box-shadow: 4px 3px #5e8a7d;
+			box-shadow: 4px 3px #5e8a7d;
+}
+.b-button:hover {}
+.b-button:active {
+	position: relative;
+	top: 4px;
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+		    box-shadow: none;
+}

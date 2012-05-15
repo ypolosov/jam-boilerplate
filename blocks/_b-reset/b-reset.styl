@@ -58,7 +58,6 @@ audio:not([controls]) {
 }
 
 
-
 /* Base elements style */
 
 html {
@@ -78,6 +77,7 @@ textarea {
 body {
     font-size: baseFontSize;
     line-height: baseLineHeight;
+    background: baseBackground;
 }
 
 ::-moz-selection {
@@ -162,7 +162,9 @@ textarea {
 
 button,
 input
-{ line-height: normal; }
+{
+    line-height: normal;
+}
 
 button,
 input[type="button"],
@@ -233,13 +235,7 @@ td {
 }
 
 
-
-
 /* Typography */
-
-/* =============================================================================
-   Typography
-   ========================================================================== */
 
 abbr[title] {
     border-bottom: 1px dotted;
@@ -258,8 +254,8 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
+    border-top: 1px solid baseHrColor;
+    margin: baseLineHeight 0;
     padding: 0;
 }
 
@@ -291,7 +287,6 @@ sup {
 sub {
     bottom: -0.25em;
 }
-
 
 blockquote,
 q {

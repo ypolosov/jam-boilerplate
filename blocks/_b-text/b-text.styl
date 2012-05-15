@@ -2,64 +2,62 @@
 
 .b-text {}
 
-.b-text p {
+.b-text p, .b-text-p {
     margin: 0 0 baseLineHeight;
     font-family: baseFontFamily;
     font-size: baseFontSize;
     line-height: baseLineHeight;
 }
 
-/* Headers */
+// Headers
 
-.b-text h1,
-.b-text h2,
-.b-text h3,
-.b-text h4,
-.b-text h5,
-.b-text h6 {
+.b-text h1, .b-text-h1,
+.b-text h2, .b-text-h2,
+.b-text h3, .b-text-h3,
+.b-text h4, .b-text-h4,
+.b-text h5, .b-text-h5,
+.b-text h6, .b-text-h6 {
     text-rendering: optimizelegibility;
     margin: 0 0 baseLineHeight;
 }
 
-.b-text h1 {
+.b-text h1, .b-text-h1 {
     font: textH1FontWeight textH1FontSize/textH6LineHeight textH1FontFamily;
     color: textH1Color;
 }
 
-.b-text h2 {
+.b-text h2, .b-text-h2 {
     font: textH2FontWeight textH2FontSize/textH2LineHeight textH2FontFamily;
     color: textH2Color;
 }
 
-.b-text h3 {
+.b-text h3, .b-text-h3 {
     font: textH3FontWeight textH3FontSize/textH3LineHeight textH3FontFamily;
     color: textH3Color;
 }
 
-.b-text h4 {
+.b-text h4, .b-text-h4 {
     font: textH4FontWeight textH4FontSize/textH4LineHeight textH4FontFamily;
     color: textH4Color;
 }
 
-.b-text h5 {
+.b-text h5, .b-text-h5 {
     font: textH5FontWeight textH5FontSize/textH5LineHeight textH5FontFamily;
     color: textH5Color;
 }
 
-.b-text h6 {
+.b-text h6, .b-text-h6 {
     font: textH6FontWeight textH6FontSize/textH6LineHeight textH6FontFamily;
     color: textH6Color;
 }
 
 
-// LISTS
-// -----
+// Lists
 
-// Unordered and Ordered lists
 .b-text ul,
-.b-text ol {
+.b-text ol, {
     padding: 0;
-    margin: 0 0 @baseLineHeight / 2 25px;
+    margin: 0 0 baseLineHeight 25px;
 }
 
 .b-text ul ul,
@@ -78,45 +76,29 @@
 }
 
 .b-text li {
-    line-height: @baseLineHeight;
+    line-height: baseLineHeight;
 }
 
 // Description Lists
 .b-text dl {
-    margin-bottom: @baseLineHeight;
+    margin-bottom: baseLineHeight;
 }
 
 .b-text dt,
 .b-text dd {
-    line-height: @baseLineHeight;
+    line-height: baseLineHeight;
 }
 
 .b-text dt {
     font-weight: bold;
-    line-height: @baseLineHeight - 1; // fix jank Helvetica Neue font bug
+    line-height: baseLineHeight - 1; // fix jank Helvetica Neue font bug
 }
 
 .b-text dd {
-    margin-left: @baseLineHeight / 2;
-}
-
-/* Horizontal rules */
-
-.b-text hr {
-    margin: @baseLineHeight 0;
-    border: 0;
-    border-top: 1px solid @hrBorder;
-    border-bottom: 1px solid @white;
+    margin-left: baseLineHeight;
 }
 
 // Emphasis
-.b-text strong {
-    font-weight: bold;
-}
-
-.b-text em {
-    font-style: italic;
-}
 
 .b-text abbr[title] {
     cursor: help;
@@ -126,8 +108,8 @@
 
 .b-text blockquote {
     padding: 0 0 0 15px;
-    margin: 0 0 @baseLineHeight;
-    border-left: 5px solid @grayLighter;
+    margin: 0 0 baseLineHeight;
+    border-left: 5px solid grayLighter;
 }
 
 .b-text q:before {}
@@ -137,7 +119,7 @@
 
 .b-text address {
     display: block;
-    margin-bottom: @baseLineHeight;
+    margin-bottom: baseLineHeight;
     font-style: normal;
-    line-height: @baseLineHeight;
+    line-height: baseLineHeight;
 }
