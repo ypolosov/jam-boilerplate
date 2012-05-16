@@ -30,11 +30,15 @@ gridColumns = 12;
 gridColumnWidth = 60px;
 gridGutterWidth	= 20px;
 
-fluidGridMimWidth = 1000px;
-fluidGridMaxWidth = 1440px;
+gridContainerWidth = gridColumns * gridColumnWidth + (gridColumns - 1) * gridGutterWidth;
 
-fluidGridColumnWidth = 6.382978723%;
-fluidGridGutterWidth = 2.127659574%;
+gridContainerPadding = 0 30px;
+
+fluidGridContainerMinWidth = 1000px;
+fluidGridContainerMaxWidth = 1280px;
+
+fluidGridColumnWidth = gridColumnWidth / gridContainerWidth * 100;
+fluidGridGutterWidth = gridGutterWidth / gridContainerWidth * 100;
 
 
 // Text decoration
