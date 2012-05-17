@@ -1,12 +1,14 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+  grunt.loadTasks('grunt-styletto');
   // Project configuration.
   grunt.initConfig({
     // the staging directory used during the process
     staging: 'intermediate/',
     // final build output
     output: 'publish/',
+
     // filter any files matching one of the below pattern during mkdirs task
     // the pattern in the .gitignore file should work too.
     exclude: '.git* build/** node_modules/** grunt.js package.json *.md'.split(' '),
@@ -17,6 +19,15 @@ module.exports = function(grunt) {
     // concat css/**/*.css files, inline @import, output a single minified css
     css: {
       'blocks/__style.css': ['blocks/**/*.css']
+    },
+    styletto: {
+      config: {
+        "input": "blocks/style.css",
+        "output": "blocks/__style.css",
+        "compress": "csso",
+        "base64": 15000,
+        "resolveFrom": ""
+      }
     },
     // Renames JS/CSS to prepend a hash of their contents for easier
     // versioning
@@ -85,5 +96,7 @@ module.exports = function(grunt) {
     },
     uglify: {}
   });
+  // Default task.
+  grunt.registerTask('default', 'styletto');
 
 };
