@@ -1,0 +1,66 @@
+@import '../config';
+
+// Generates @font-face declaration for given font family and type
+
+fontFaceDeclaration(fontFaceFamily, fontFaceType = 'regular')
+
+    if fontFaceType is "bolditalic"
+        fontFaceWeight = "bold"
+        fontFaceStyle  = "italic"
+
+    else if fontFaceType is "bold"
+        fontFaceWeight = "bold"
+        fontFaceStyle  = "normal"
+
+    else if fontFaceType is "italic"
+        fontFaceWeight = "normal"
+        fontFaceStyle  = "italic"
+
+    else
+        fontFaceWeight = "normal"
+        fontFaceStyle  = "normal"
+
+    fontFaceTemplate = "_font_" + fontFaceFamily + "/b-rub_font_" + fontFaceFamily + "_type_" + fontFaceType
+
+    rubFfontEot = fontFaceTemplate + ".eot"
+    fontFaceTTF  = fontFaceTemplate + ".ttf"
+    fontFaceWoff = fontFaceTemplate + ".woff"
+    
+    fontFaceName = "b-rub_font_" + fontFaceFamily;
+
+    fontFaceFace = '@font-face';
+
+    {fontFaceFace} {
+        font-family: fontFaceName
+        font-weight: fontFaceWeight
+        font-style: fontFaceStyle
+        src: url( fontFaceEot )
+        src: url( fontFaceEot + "?#iefix" ) format('embedded-opentype'), url( fontFaceWoff ) format('woff'), url( fontFaceTTF ) format('truetype')
+    }
+
+// Generates set of rules for given font family and list of types
+
+rubFontDeclaration(rubFont)
+
+    rubFontName     = "b-rub_font_" + rubFont[0]
+    rubFontSelector = "." + rubFontName
+
+    for i in 1..(length(rubFont) - 1)
+
+        fontFaceDeclaration(rubFont[0], rubFont[i])
+    
+    {rubFontSelector} {
+        font-family: rubFontName
+    }
+
+// Generates rules for supplied set of fonts
+
+rubFontsInit(rubFontsList)
+
+    for font in rubFontsList
+
+        rubFontDeclaration(font)
+
+// Initializes generation with font list from config
+
+rubFontsInit(rubFonts)
