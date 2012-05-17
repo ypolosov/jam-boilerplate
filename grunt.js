@@ -20,13 +20,23 @@ module.exports = function(grunt) {
     css: {
       'blocks/__style.css': ['blocks/**/*.css']
     },
+    watch: {
+      scripts: {
+        files: '<config:lint.files>',
+        tasks: 'lint'
+      },
+      css: {
+        files: ['blocks/**/*.css','blocks/**/*.styl','blocks/**/*.less'],
+        tasks: 'styletto'
+      }
+    },
     styletto: {
       config: {
-        "input": "blocks/style.css",
-        "output": "blocks/__style.css",
-        "compress": "csso",
-        "base64": 15000,
-        "resolveFrom": ""
+        input: "blocks/style.css",
+        output: "blocks/__style.css",
+        compress: "csso",
+        base64: 15000,
+        resolveFrom: ""
       }
     },
     // Renames JS/CSS to prepend a hash of their contents for easier
@@ -46,11 +56,6 @@ module.exports = function(grunt) {
     img: {
       dist: '<config:rev.img>'
     },
-    watch: {
-      files: '<config:lint.files>',
-      tasks: 'lint test'
-    },
-    
     meta: {
       version: '0.1.0',
       banner: '/*! JAM-BOILERPLATE - v<%= meta.version %> - ' +
@@ -60,10 +65,7 @@ module.exports = function(grunt) {
         'YOUR_NAME; Licensed MIT */'
     },
     lint: {
-      files: ['grunt.js', '3rd/**/*.js', 'test/**/*.js','blocks/**/*.js']
-    },
-    test: {
-      files: ['test/**/*.js']
+      files: ['grunt.js', 'blocks/**/*.js']
     },
     concat: {
       dist: {
@@ -88,7 +90,8 @@ module.exports = function(grunt) {
         sub: true,
         undef: true,
         boss: true,
-        eqnull: true
+        eqnull: true,
+        browser: true
       },
       globals: {
         jQuery: true
@@ -96,7 +99,7 @@ module.exports = function(grunt) {
     },
     uglify: {}
   });
-  // Default task.
-  grunt.registerTask('default', 'styletto');
 
+  grunt.registerTask('default', 'styletto');
+  grunt.registerTask('publish', 'styletto concat min img'); // not tested
 };
