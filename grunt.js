@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     // Renames JS/CSS to prepend a hash of their contents for easier
     // versioning
     rev: {
-      js: ['3rd/**/*.js','blocks/**/*.js'],
+      js: ['lib/**/*.js','blocks/**/*.js'],
       css: 'blocks/**/*.css',
       img: ['tmp/**','blocks/**/*.png','blocks/**/*.jpg','blocks/**/*.gif']
     },
