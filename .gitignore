@@ -48,3 +48,11 @@ publish
 # build script local files
 build/buildinfo.properties
 build/config/buildinfo.properties
+
+# node js
+pids
+logs
+results
+
+node_modules
+npm-debug.log
