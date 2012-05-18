@@ -1,7 +1,6 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
-  grunt.loadTasks('grunt-styletto');
   // Project configuration.
   grunt.initConfig({
     // the staging directory used during the process
@@ -38,6 +37,13 @@ module.exports = function(grunt) {
         base64: 15000,
         resolveFrom: ""
       }
+    },
+    csslint: {
+        src: "blocks/**/*.css",
+        rules: {
+            // "import": false,
+            "overqualified-elements": 2
+        }
     },
     // Renames JS/CSS to prepend a hash of their contents for easier
     // versioning
@@ -100,6 +106,9 @@ module.exports = function(grunt) {
     uglify: {}
   });
 
+  grunt.loadNpmTasks('grunt-styletto');
+  grunt.loadNpmTasks('grunt-css');
+
   grunt.registerTask('default', 'styletto');
-  grunt.registerTask('publish', 'styletto concat min img'); // not tested
+  grunt.registerTask('publish', 'csslint styletto concat min img'); // not tested
 };
