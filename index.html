@@ -1,62 +1,84 @@
 <!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="ru">
 <head>
+
+    <!-- Charset must defined in the begining for following fields to be interpret correctly -->
     <meta charset="utf-8">
 
-    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-        More info: h5bp.com/i/378 -->
+    <!-- CHECKLIST: Remove if activated in .htaccess -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title></title>
+    <!-- CHECKLIST: Test on CMS
+         SEO stuff, need to be on every indexing page -->
     <meta name="keywords" content="">
     <meta name="description" content="">
-
-    <meta name="canonical" content="">
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
     <meta name="viewport" content="width=device-width">
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory:
-        mathiasbynens.be/notes/touch-icons -->
+    <!-- CHECKLIST: Test on CMS
+         Must be filled on all pages -->
+    <title></title>
 
-    <link rel="stylesheet" href="blocks/style.css">
+    <!-- CHECKLIST: Test on CMS
+         Canonical url for a page to index in search engines, need to be on every indexing page -->
+    <link rel="canonical" href="">
 
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+    <!-- CSS concatenated and minified via build script -->
+    <link rel="stylesheet" href="build/_style.css">
 
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/vendor/modernizr-2.5.3.min.js"></script>
+    <!-- Modernizr and jQuery from Yandex CDN, without fallback for now, will be added later if required.
+         Modernizr have to be added first and as separate file to enable proper work of HTML5 tags in IE 6-7. -->
+    <script src="//yandex.st/modernizr/2.5.3/modernizr.min.js"></script>    
+    <script src="//yandex.st/jquery/1.7.2/jquery.min.js"></script>
+    
+    <!-- Scripts concatenated and minified via build script -->
+    <script src="build/_script.js"></script>
+
 </head>
 <body>
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-  <!-- Add your site or application content here -->
-  <img src="tmp/test.png" alt="Test image" width="46" height="46" >
 
-  <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
+    <!-- Site code goes here -->
 
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="3rd/jquery-1.7.2.min.js"><\/script>')</script>
 
-  <!-- scripts concatenated and minified via build script -->
-  <script src="blocks/b-button/b-button.js"></script>
-  <!-- end scripts -->
+    <!-- CHECKLIST: Change UA-XXXXX-X to site's ID
+         Google Analytics snippet BEGIN -->
+    <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount','UA-XXXXX-X'],['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- Google Analytics snippet END -->
 
-  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-       mathiasbynens.be/notes/async-analytics-snippet -->
-  <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
+    <!-- CHECKLIST: Change XXXXXXX to site's ID (3 places)
+         Yandex.Metrica snippet BEGIN -->
+    <script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounterXXXXXXX = new Ya.Metrika({id:XXXXXXX, enableAll: true, webvisor:true});
+            } catch(e) {}
+        });
+    
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/XXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- Yandex.Metrica snippet END -->
+
 </body>
 </html>
