@@ -7,6 +7,7 @@ module.exports = function(grunt) {
     staging: 'intermediate/',
     // final build output
     output: 'publish/',
+
     // filter any files matching one of the below pattern during mkdirs task
     // the pattern in the .gitignore file should work too.
     exclude: '.git* build/** node_modules/** grunt.js package.json *.md'.split(' '),
@@ -17,6 +18,32 @@ module.exports = function(grunt) {
     // concat css/**/*.css files, inline @import, output a single minified css
     css: {
       'blocks/__style.css': ['blocks/**/*.css']
+    },
+    watch: {
+      scripts: {
+        files: '<config:lint.files>',
+        tasks: 'lint'
+      },
+      css: {
+        files: ['blocks/**/*.css','blocks/**/*.styl','blocks/**/*.less'],
+        tasks: 'styletto'
+      }
+    },
+    styletto: {
+      config: {
+        input: "blocks/style.css",
+        output: "blocks/__style.css",
+        compress: "csso",
+        base64: 15000,
+        resolveFrom: ""
+      }
+    },
+    csslint: {
+        src: "blocks/**/*.css",
+        rules: {
+            // "import": false,
+            "overqualified-elements": 2
+        }
     },
     // Renames JS/CSS to prepend a hash of their contents for easier
     // versioning
@@ -35,11 +62,6 @@ module.exports = function(grunt) {
     img: {
       dist: '<config:rev.img>'
     },
-    watch: {
-      files: '<config:lint.files>',
-      tasks: 'lint test'
-    },
-    
     meta: {
       version: '0.1.0',
       banner: '/*! JAM-BOILERPLATE - v<%= meta.version %> - ' +
@@ -49,10 +71,7 @@ module.exports = function(grunt) {
         'YOUR_NAME; Licensed MIT */'
     },
     lint: {
-      files: ['grunt.js', '3rd/**/*.js', 'test/**/*.js','blocks/**/*.js']
-    },
-    test: {
-      files: ['test/**/*.js']
+      files: ['grunt.js', 'blocks/**/*.js']
     },
     concat: {
       dist: {
@@ -77,7 +96,8 @@ module.exports = function(grunt) {
         sub: true,
         undef: true,
         boss: true,
-        eqnull: true
+        eqnull: true,
+        browser: true
       },
       globals: {
         jQuery: true
@@ -86,4 +106,9 @@ module.exports = function(grunt) {
     uglify: {}
   });
 
+  grunt.loadNpmTasks('grunt-styletto');
+  grunt.loadNpmTasks('grunt-css');
+
+  grunt.registerTask('default', 'styletto');
+  grunt.registerTask('publish', 'csslint styletto concat min img'); // not tested
 };
