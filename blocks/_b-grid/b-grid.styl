@@ -5,7 +5,6 @@
     margin-left: auto;
     margin-right: auto;
     padding: gridContainerPadding;
-    *zoom: 1;
 }
 
 .b-grid_type_fluid {
@@ -13,8 +12,6 @@
     min-width: fluidGridContainerMinWidth;
     max-width: fluidGridContainerMaxWidth;
 }
-
-
 
 .b-grid:before, .b-grid:after {
     display: table;
@@ -27,7 +24,6 @@
 
 .b-grid__row {
     width: 100%;
-    *zoom: 1;
 }
 
 .b-grid__row:before, .b-grid__row:after {
@@ -73,7 +69,6 @@ spanGenerator(columns)
         fluidColumnName = '.b-grid_type_fluid .b-grid__column_size_' + N;
         {fluidColumnName} {
             width: unit((fluidGridColumnWidth * N + fluidGridGutterWidth * ( N - 1 )), "%");
-            *width: unit((fluidGridColumnWidth * N + fluidGridGutterWidth * ( N - 1 ) - (.5 / gridContainerWidth * 100)), "%");
         }
 
     for N in 1..(columns - 1)
@@ -81,7 +76,6 @@ spanGenerator(columns)
         fluidOffsetName = '.b-grid_type_fluid .b-grid__offset_size_' + N;
         {fluidOffsetName} {
             margin-left: unit((fluidGridColumnWidth * N + fluidGridGutterWidth * ( N + 1 )), "%");
-            *margin-left: unit((fluidGridColumnWidth * N + fluidGridGutterWidth * ( N + 1 ) - (.5 / gridContainerWidth * 100)), "%");
         }
 
 spanGenerator(gridColumns)

@@ -53,3 +53,7 @@ results
 node_modules
 npm-debug.log
 public/*
+
+# Vagrant files
+.vagrant
+Vagrantfile
