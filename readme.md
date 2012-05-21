@@ -16,9 +16,6 @@ First of all go to build directory:
 
 Now you can use these commands:  
 
-`grunt --base="../" watch` - watch for changes in css and js files. Auto-invokes jshint for js, styletto for css.  
-
-
 `h5bp --base="../"` - lint, csslint, styletto  
 `h5bp --base="../" watch` - same as above but watch task  
   
