@@ -10,7 +10,15 @@ Install csslint and styletto plugins with these commands:
 `npm install grunt-styletto`
 
 ## Usage
-Use these commands during development:  
-`grunt` - compile input css-file wtih styletto  
 
-`grunt watch` - watch for changes in css and js files. Auto-invoke jshint for js, styletto for css.
+`cd build`
+Now you can use these commands:  
+
+`grunt --base="../" watch` - watch for changes in css and js files. Auto-invokes jshint for js, styletto for css.  
+
+
+`h5bp --base="../"` - lint, csslint, styletto  
+`h5bp --base="../" watch` - same as above but watch task  
+  
+`h5bp --base="../" build` - runs jshint,concatenate,minifies js files, csslint plus styletto for styles  
+`h5bp --base="../" publish` - same as build plus compress images
