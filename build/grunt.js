@@ -115,6 +115,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
 
   grunt.registerTask('default', 'concat styletto:dev styletto:dev_ie watch');
+  grunt.registerTask('watch',   'concat styletto:dev styletto:dev_ie watch');
   grunt.registerTask('publish', 'exec styletto csslint concat lint min');
 
 };
