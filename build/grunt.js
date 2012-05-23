@@ -57,10 +57,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    // Optimizes JPGs and PNGs (with jpegtran & optipng)
-    img: {
-      dist: '<config:rev.img>'
-    },
     meta: {
       version: '0.1.0',
       banner: '/*! JAM-BOILERPLATE - v<%= meta.version %> - ' +
@@ -85,7 +81,7 @@ module.exports = function(grunt) {
       }
     },
     exec: {
-        remove_logs: {
+        remove_old_files: {
             command: 'rm -rf ../publish/*'
         }
     },
@@ -115,7 +111,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
 
   grunt.registerTask('default', 'concat styletto:dev styletto:dev_ie watch');
-  grunt.registerTask('watch',   'concat styletto:dev styletto:dev_ie watch');
+  grunt.registerTask('watcher', 'concat styletto:dev styletto:dev_ie watch');
   grunt.registerTask('publish', 'exec styletto csslint concat lint min');
 
 };
