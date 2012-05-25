@@ -13,6 +13,20 @@ module.exports = function(grunt) {
         tasks: 'styletto:dev styletto:dev_ie'
       }
     },
+-    csslint: {
+-      base_theme: {
+-        src: '<config:styletto.dev.src>',
+-        rules: {
+-            "import": false,
+-            "overqualified-elements": 2,
+-            "unique-headings": false,
+-            "star-property-hack": false,
+-            "known-properties": false,
+-            "box-sizing": false,
+-            "qualified-headings": false
+-        }
+-      }
+    },
     styletto: {
       dev: {
         src: "../blocks/style.css",
