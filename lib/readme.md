@@ -1,0 +1,1 @@
+Folder for storing external libraries and plugins, such as jQuery UI

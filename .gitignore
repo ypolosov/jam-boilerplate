@@ -43,7 +43,6 @@ dwsync.xml
 .svn
 .CVS
 intermediate
-publish/*
 .idea
 
 # Node.JS
@@ -57,3 +56,9 @@ npm-debug.log
 # Vagrant files
 .vagrant
 Vagrantfile
+
+publish/*
+!publish/readme.md
+
+tmp/*
+!tmp/readme.md

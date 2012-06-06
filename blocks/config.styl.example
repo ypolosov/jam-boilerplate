@@ -127,3 +127,14 @@ textTableCellPadding = 0 5px;
 textTableFontSize    = 13px;
 textTableBorder      = 1px solid #ccc;
 textTableHeaderBG    = #eee;
+
+
+// mixin for crearfix
+
+clearFix()
+    zoom: 1;
+    &:before, &:after
+        content: "";
+        display: table;
+    &:after
+        clear: both;

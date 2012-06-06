@@ -5,6 +5,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: gridContainerPadding;
+    clearFix();
 }
 
 .b-grid_type_fluid {
@@ -13,27 +14,11 @@
     max-width: fluidGridContainerMaxWidth;
 }
 
-.b-grid:before, .b-grid:after {
-    display: table;
-    content: "";
-}
-
-.b-grid:after {
-    clear: both;
-}
-
 .b-grid__row {
     width: 100%;
+    clearFix();
 }
 
-.b-grid__row:before, .b-grid__row:after {
-    display: table;
-    content: "";
-}
-
-.b-grid__row:after {
-    clear: both;
-}
 
 .b-grid__column {
     float: left;
@@ -59,7 +44,7 @@ spanGenerator(columns)
 
     for N in 1..(columns - 1)
 
-        offsetName = '.b-grid__offset_size_' + N;
+        offsetName = '.b-grid__column_offset_' + N;
         {offsetName} {
             margin-left: gridColumnWidth * N + gridGutterWidth * ( N + 1 );
         }
@@ -73,7 +58,7 @@ spanGenerator(columns)
 
     for N in 1..(columns - 1)
 
-        fluidOffsetName = '.b-grid_type_fluid .b-grid__offset_size_' + N;
+        fluidOffsetName = '.b-grid_type_fluid .b-grid__column_offset_' + N;
         {fluidOffsetName} {
             margin-left: unit((fluidGridColumnWidth * N + fluidGridGutterWidth * ( N + 1 )), "%");
         }
