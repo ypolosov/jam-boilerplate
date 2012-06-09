@@ -4,7 +4,7 @@
 
 <p>Чтобы не начинать каждый проект с нуля можно взять готовую к использованию заготовку отсюда: <a href="https://github.com/jetstyle/jam-boilerplate">jam-boilerplate</a>.</p>
 
-<h3 id="_">Базовая структура проекта</h3>
+<h3>Базовая структура проекта</h3>
 
 <pre><code>blocks/
     _b-block-default/
