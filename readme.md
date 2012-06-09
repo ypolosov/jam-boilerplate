@@ -38,7 +38,7 @@ index.html
 robots.txt
 </code></pre>
 
-<h3 id="_">Описание файлов и папок</h3>
+<h3>Описание файлов и папок</h3>
 
 <h4 id="blocks_">blocks/</h4>
 
