@@ -9,38 +9,30 @@ module.exports = function(grunt) {
         tasks: 'concat'
       },
       css: {
-        files: ['../blocks/*.css', '../blocks/*.styl', '../blocks/**/*.css','../blocks/**/*.styl','../blocks/**/*.less'],
+        files: ['../blocks/*.css', '../blocks/*.styl', '../blocks/**/*.css', '../blocks/**/*.styl', '../blocks/**/*.less'],
         tasks: 'styletto:dev styletto:dev_ie'
       }
     },
     styletto: {
       dev: {
-        src: "../blocks/style.css",
-        dest: "../publish/style.css",
-        compress: false,
-        base64: false,
-        resolveFrom: ""
+        src: ['../blocks/_b-reset/b-reset.styl', '../lib/**/*.css', '../blocks/**/!(*.ie).css', '../blocks/**/!(*.ie).styl'],
+        dest: '../publish/style.css'
       },
       dev_ie: {
-        src: "../blocks/style.ie.css",
-        dest: "../publish/style.ie.css",
-        compress: false,
-        base64: false,
-        resolveFrom: ""
+        src: ['../blocks/_b-reset/b-reset.ie.styl', '../blocks/**/*.ie.styl', '../blocks/**/*.ie.css'],
+        dest: '../publish/style.ie.css'
       },
       publish: {
-        src: "../blocks/style.css",
-        dest: "../publish/style.min.css",
+        src: '<config:styletto.dev.src>',
+        dest: '../publish/style.min.css',
         compress: true,
-        base64: true,
-        resolveFrom: ""
+        base64: true
       },
       publish_ie: {
-        src: "../blocks/style.ie.css",
-        dest: "../publish/style.ie.min.css",
+        src: '<config:styletto.dev_ie.src>',
+        dest: '../publish/style.ie.min.css',
         compress: true,
-        base64: true,
-        resolveFrom: ""
+        base64: true
       }
     },
     meta: {
