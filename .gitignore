@@ -56,9 +56,3 @@ npm-debug.log
 # Vagrant files
 .vagrant
 Vagrantfile
-
-publish/*
-!publish/readme.md
-
-tmp/*
-!tmp/readme.md
