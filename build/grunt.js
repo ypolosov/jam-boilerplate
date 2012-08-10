@@ -15,11 +15,11 @@ module.exports = function(grunt) {
     },
     styletto: {
       dev: {
-        src: ['../blocks/_b-reset/b-reset.styl', '../lib/**/*.css', '../blocks/**/!(*.ie).css', '../blocks/**/!(*.ie).styl'],
+        src: ['../blocks/_b-reset/b-reset.styl', '../lib/**/*.css', '../blocks/**/!(!*|*.ie).css', '../blocks/**/!(!*|*.ie).styl'],
         dest: '../publish/style.css'
       },
       dev_ie: {
-        src: ['../blocks/_b-reset/b-reset.ie.styl', '../blocks/**/*.ie.styl', '../blocks/**/*.ie.css'],
+        src: ['../blocks/_b-reset/b-reset.ie.styl', '../blocks/**/!(!*)*.ie.styl', '../blocks/**/!(!*)*.ie.css'],
         dest: '../publish/style.ie.css'
       },
       publish: {
@@ -58,6 +58,15 @@ module.exports = function(grunt) {
         dest: '../publish/script.min.js'
       }
     },
+    csslint: {
+      blocks: {
+        src: '../blocks/**/*.css',
+        rules: {
+          "import": false,
+          "overqualified-elements": 2
+        }
+      }
+    },
     jshint: {
       options: {
         curly: true,
@@ -84,6 +93,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', 'concat styletto:dev styletto:dev_ie');
   grunt.registerTask('watcher', 'concat styletto:dev styletto:dev_ie watch');
-  grunt.registerTask('publish', 'styletto csslint concat lint min');
+  grunt.registerTask('publish', 'concat lint styletto csslint min');
 
 };
