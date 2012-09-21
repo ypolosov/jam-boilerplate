@@ -16,27 +16,31 @@ module.exports = function(grunt) {
     styletto: {
       dev: {
         src: ['../blocks/_b-reset/b-reset.styl', '../lib/**/*.css', '../blocks/**/!(!*|*.ie).css', '../blocks/**/!(!*|*.ie).styl'],
-        dest: '../publish/style.css'
+        dest: '../publish/style.css',
+        errors: "alert"
       },
       dev_ie: {
         src: ['../blocks/_b-reset/b-reset.ie.styl', '../blocks/**/!(!*)*.ie.styl', '../blocks/**/!(!*)*.ie.css'],
-        dest: '../publish/style.ie.css'
+        dest: '../publish/style.ie.css',
+        errors: "alert"
       },
       publish: {
         src: '<config:styletto.dev.src>',
         dest: '../publish/style.min.css',
         compress: true,
-        base64: true
+        base64: true,
+        errors: "error"
       },
       publish_ie: {
         src: '<config:styletto.dev_ie.src>',
         dest: '../publish/style.ie.min.css',
         compress: true,
-        base64: true
+        base64: true,
+        errors: "error"
       }
     },
     meta: {
-      version: '0.1.0',
+      version: '0.1.1',
       banner: '/*! JAM-BOILERPLATE - v<%= meta.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
         '* http://PROJECT_WEBSITE/\n' +
