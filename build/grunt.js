@@ -9,18 +9,31 @@ module.exports = function(grunt) {
         tasks: 'concat'
       },
       css: {
-        files: ['../blocks/*.css', '../blocks/*.styl', '../blocks/**/*.css', '../blocks/**/*.styl', '../blocks/**/*.less'],
+        files: [
+          '../blocks/**/*.css',
+          '../blocks/**/*.styl',
+          '../blocks/**/*.less'
+        ],
         tasks: 'styletto:dev styletto:dev_ie'
       }
     },
     styletto: {
       dev: {
-        src: ['../blocks/_b-reset/b-reset.styl', '../lib/**/*.css', '../blocks/**/!(!*|*.ie).css', '../blocks/**/!(!*|*.ie).styl'],
+        src: [
+          '../blocks/_b-reset/b-reset.styl',
+          '../lib/**/*.css',
+          '../blocks/**/!(!*|*.ie).css',
+          '../blocks/**/!(!*|*.ie|config).styl'
+        ],
         dest: '../publish/style.css',
         errors: "alert"
       },
       dev_ie: {
-        src: ['../blocks/_b-reset/b-reset.ie.styl', '../blocks/**/!(!*)*.ie.styl', '../blocks/**/!(!*)*.ie.css'],
+        src: [
+          '../blocks/_b-reset/b-reset.ie.styl',
+          '../blocks/**/!(!*)*.ie.styl',
+          '../blocks/**/!(!*)*.ie.css'
+        ],
         dest: '../publish/style.ie.css',
         errors: "alert"
       },
@@ -48,7 +61,11 @@ module.exports = function(grunt) {
         'YOUR_NAME; Licensed MIT */'
     },
     lint: {
-      files: ['grunt.js', '../lib/**/*.js', '../blocks/**/*.js']
+      files: [
+        'grunt.js',
+        '../lib/**/*.js',
+        '../blocks/**/*.js'
+      ]
     },
     concat: {
       dist: {
