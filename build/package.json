@@ -5,7 +5,7 @@
     "main": "./grunt.js",
     "dependencies": {
         "grunt-css": "*",
-        "grunt-styletto": "~0.2.1",
-        "styletto": "~0.3.1"
+        "grunt-styletto": "0.x",
+        "styletto": " 0.3.x"
     }
 }
