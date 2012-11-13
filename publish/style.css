@@ -272,3 +272,172 @@ q:after {
 }
 
 
+/* b-text.styl */
+
+.b-text p,
+.b-text-p {
+  margin-bottom: 12px;
+  font-family: Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+.b-text h1,
+.b-text-h1,
+.b-text h2,
+.b-text-h2,
+.b-text h3,
+.b-text-h3,
+.b-text h4,
+.b-text-h4,
+.b-text h5,
+.b-text-h5,
+.b-text h6,
+.b-text-h6 {
+  text-rendering: optimizelegibility;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+.b-text h1 a,
+.b-text-h1 a,
+.b-text h2 a,
+.b-text-h2 a,
+.b-text h3 a,
+.b-text-h3 a,
+.b-text h4 a,
+.b-text-h4 a,
+.b-text h5 a,
+.b-text-h5 a,
+.b-text h6 a,
+.b-text-h6 a {
+  color: inherit;
+  text-decoration: none;
+}
+.b-text h1:first-child,
+.b-text-h1:first-child,
+.b-text h2:first-child,
+.b-text-h2:first-child,
+.b-text h3:first-child,
+.b-text-h3:first-child,
+.b-text h4:first-child,
+.b-text-h4:first-child,
+.b-text h5:first-child,
+.b-text-h5:first-child,
+.b-text h6:first-child,
+.b-text-h6:first-child {
+  margin-top: 0;
+}
+.b-text h1,
+.b-text-h1 {
+  font: normal 48px/70px Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  color: #000;
+  border-bottom: 2px solid #000;
+  margin-bottom: 24px;
+}
+.b-text h2,
+.b-text-h2 {
+  font: bold 36px/36px Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  color: #000;
+}
+.b-text h3,
+.b-text-h3 {
+  font: normal 24px/24px Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  color: #c00;
+}
+.b-text h4,
+.b-text-h4 {
+  font: bold 18px/24px Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  color: #000;
+}
+.b-text h5,
+.b-text-h5 {
+  font: normal 16px/24px Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  color: #000;
+}
+.b-text h6,
+.b-text-h6 {
+  font: normal 16px/24px Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  color: #000;
+}
+.b-text ul,
+.b-text ol {
+  padding: 0;
+  margin: 0 0 12px 36px;
+}
+.b-text ul ul,
+.b-text ul ol,
+.b-text ol ol,
+.b-text ol ul {
+  margin-bottom: 0;
+}
+.b-text ul {
+  list-style: none;
+}
+.b-text ul > li:before {
+  content: '\2014\a0';
+  float: left;
+  margin-left: -1.25em;
+}
+.b-text ol {
+  list-style: decimal;
+}
+.b-text li {
+  line-height: 24px;
+}
+.b-text dl {
+  margin-bottom: 12px;
+}
+.b-text dt,
+.b-text dd {
+  line-height: 24px;
+}
+.b-text dt {
+  font-weight: bold;
+  line-height: 23px;
+}
+.b-text dd {
+  margin-left: 24px;
+}
+.b-text abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+.b-text pre {
+  padding: 12px 24px;
+  margin-bottom: 12px;
+  border-left: 2px solid #c00;
+  background: #eee;
+  font-size: 14px;
+}
+.b-text blockquote {
+  padding: 24px;
+  margin-bottom: 12px;
+  border-left: 5px solid #000;
+}
+.b-text q:before,
+.b-text q:after,
+.b-text blockquote:before,
+.b-text blockquote:after,
+.b-text small {
+  font-size: 0.85em;
+}
+.b-text table {
+  margin-bottom: 12px;
+}
+.b-text th,
+.b-text td {
+  font-size: 13px;
+  padding: 0 5px;
+  border: 1px solid #ccc;
+}
+.b-text th {
+  font-weight: bold;
+  background: #eee;
+  text-align: left;
+}
+.b-text address {
+  display: block;
+  margin-bottom: 12px;
+  line-height: 24px;
+}
+
+

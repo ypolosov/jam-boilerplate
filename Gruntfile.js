@@ -38,7 +38,9 @@ module.exports = function( grunt ) {
                 src: [
                     'blocks/i-reset/i-reset.styl',
                     'lib/**/*.css',
-                    'blocks/b-*/**/!(!*|*.ie).(css|styl|less)'
+                    'blocks/b-*/**/!(!*|*.ie).css',
+                    'blocks/b-*/**/!(!*|*.ie).styl',
+                    'blocks/b-*/**/!(!*|*.ie).less'
                 ],
                 dest: 'publish/style.css',
                 errors: "alert",
@@ -49,7 +51,9 @@ module.exports = function( grunt ) {
                 src: [
                     'blocks/i-reset/i-reset.ie.styl',
                     'lib/**/*.css',
-                    'blocks/b-*/**/!(!*)*.ie.(css|styl|less)'
+                    'blocks/b-*/**/!(!*)*.ie.css',
+                    'blocks/b-*/**/!(!*)*.ie.styl',
+                    'blocks/b-*/**/!(!*)*.ie.less'
                 ],
                 dest: 'publish/style.ie.css',
                 errors: "alert",
@@ -81,7 +85,8 @@ module.exports = function( grunt ) {
         concat: {
             dist: {
                 src: [
-                    'lib/**/!(jquery.min|html5shiv).js',
+                    'lib/consoleshiv.js',
+                    'lib/**/!(jquery.min|html5shiv|consoleshiv).js',
                     'blocks/**/*.js'
                 ],
                 dest: 'publish/script.js'
