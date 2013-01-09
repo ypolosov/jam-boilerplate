@@ -44,7 +44,15 @@ module.exports = function( grunt ) {
                 ],
                 dest: 'publish/style.css',
                 errors: "alert",
-                nib: false
+                stylus: {
+                    imports: [
+                        'blocks/config.styl',
+                        'blocks/i-mixins/i-mixins__clearfix.styl',
+                        'blocks/i-mixins/i-mixins__vendor.styl',
+                        'blocks/i-mixins/i-mixins__if-ie.styl'
+                    ]
+                }
+
             },
 
             dev_ie: {
@@ -57,25 +65,31 @@ module.exports = function( grunt ) {
                 ],
                 dest: 'publish/style.ie.css',
                 errors: "alert",
-                nib: false
+                stylus: {
+                    variables: { "ie": true },
+                    imports: [
+                        'blocks/config.styl',
+                        'blocks/i-mixins/i-mixins__clearfix.styl',
+                        'blocks/i-mixins/i-mixins__vendor.styl',
+                        'blocks/i-mixins/i-mixins__if-ie.styl'
+                    ]
+                }
             },
 
             publish: {
-                src: '<config:styletto.dev.src>',
-                dest: 'publish/style.min.css',
+                src: '<config:styletto.dev.dest>',
+                dest: 'publish/style.css',
                 compress: true,
                 base64: true,
-                errors: "error",
-                nib: false
+                errors: "error"
             },
 
             publish_ie: {
-                src: '<config:styletto.dev_ie.src>',
-                dest: 'publish/style.ie.min.css',
+                src: '<config:styletto.dev_ie.dest>',
+                dest: 'publish/style.ie.css',
                 compress: true,
                 base64: true,
-                errors: "error",
-                nib: false
+                errors: "error"
             }
 
         },
