@@ -45,10 +45,12 @@ module.exports = function( grunt ) {
                 dest: 'publish/style.css',
                 errors: "alert",
                 stylus: {
+                    variables: { 'vendor-prefixes': 'webkit moz o ms official' },
                     imports: [
                         'blocks/config.styl',
                         'blocks/i-mixins/i-mixins__clearfix.styl',
                         'blocks/i-mixins/i-mixins__vendor.styl',
+                        'blocks/i-mixins/i-mixins__gradients.styl',
                         'blocks/i-mixins/i-mixins__if-ie.styl'
                     ]
                 }
@@ -70,7 +72,6 @@ module.exports = function( grunt ) {
                     imports: [
                         'blocks/config.styl',
                         'blocks/i-mixins/i-mixins__clearfix.styl',
-                        'blocks/i-mixins/i-mixins__vendor.styl',
                         'blocks/i-mixins/i-mixins__if-ie.styl'
                     ]
                 }
