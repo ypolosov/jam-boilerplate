@@ -79,7 +79,7 @@ module.exports = function( grunt ) {
 
             publish: {
                 src: '<config:styletto.dev.dest>',
-                dest: 'publish/style.css',
+                dest: '<config:styletto.dev.dest>',
                 compress: true,
                 base64: true,
                 errors: 'error'
@@ -87,7 +87,7 @@ module.exports = function( grunt ) {
 
             publish_ie: {
                 src: '<config:styletto.dev_ie.dest>',
-                dest: 'publish/style.ie.css',
+                dest: '<config:styletto.dev_ie.dest>',
                 compress: true,
                 base64: true,
                 errors: 'error'
@@ -113,7 +113,7 @@ module.exports = function( grunt ) {
         min: {
             dist: {
                 src: '<config:concat.dist.dest>',
-                dest: 'publish/script.min.js'
+                dest: '<config:concat.dist.dest>'
             }
         },
 
@@ -153,6 +153,8 @@ module.exports = function( grunt ) {
         // development server for LiveReload
 
         server: {
+            // uncommment to set custom port
+            // port: 3502,
             base: process.cwd()
         }
 
@@ -164,6 +166,6 @@ module.exports = function( grunt ) {
 
     grunt.registerTask('default', 'concat styletto:dev styletto:dev_ie');
     grunt.registerTask('reloader', 'concat styletto:dev styletto:dev_ie server');
-    grunt.registerTask('publish', 'concat lint min  styletto:dev styletto:dev_ie csslint styletto:publish styletto:publish_ie');
+    grunt.registerTask('publish', 'concat min styletto:dev styletto:dev_ie styletto:publish styletto:publish_ie');
 
 };
