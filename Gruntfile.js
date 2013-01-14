@@ -43,7 +43,7 @@ module.exports = function( grunt ) {
                     'blocks/b-*/**/!(!*|*.ie).less'
                 ],
                 dest: 'publish/style.css',
-                errors: "alert",
+                errors: 'alert',
                 stylus: {
                     variables: { 'vendor-prefixes': 'webkit moz o ms official' },
                     imports: [
@@ -66,9 +66,9 @@ module.exports = function( grunt ) {
                     'blocks/b-*/**/!(!*)*.ie.less'
                 ],
                 dest: 'publish/style.ie.css',
-                errors: "alert",
+                errors: 'alert',
                 stylus: {
-                    variables: { "ie": true },
+                    variables: { 'ie': true },
                     imports: [
                         'blocks/config.styl',
                         'blocks/i-mixins/i-mixins__clearfix.styl',
@@ -82,7 +82,7 @@ module.exports = function( grunt ) {
                 dest: 'publish/style.css',
                 compress: true,
                 base64: true,
-                errors: "error"
+                errors: 'error'
             },
 
             publish_ie: {
@@ -90,7 +90,7 @@ module.exports = function( grunt ) {
                 dest: 'publish/style.ie.css',
                 compress: true,
                 base64: true,
-                errors: "error"
+                errors: 'error'
             }
 
         },
