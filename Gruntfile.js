@@ -38,14 +38,13 @@ module.exports = function( grunt ) {
                 src: [
                     'blocks/i-reset/i-reset.styl',
                     'lib/**/*.css',
-                    'blocks/b-*/**/!(!*|*.ie).css',
-                    'blocks/b-*/**/!(!*|*.ie).styl',
-                    'blocks/b-*/**/!(!*|*.ie).less'
+                    'blocks/b-*/**/*.css',
+                    'blocks/b-*/**/*.styl',
+                    'blocks/b-*/**/*.less'
                 ],
                 dest: 'publish/style.css',
                 errors: 'alert',
                 stylus: {
-                    variables: { 'vendor-prefixes': 'webkit moz o ms official' },
                     imports: [
                         'blocks/config.styl',
                         'blocks/i-mixins/i-mixins__clearfix.styl',
@@ -59,11 +58,11 @@ module.exports = function( grunt ) {
 
             dev_ie: {
                 src: [
-                    'blocks/i-reset/i-reset.ie.styl',
+                    'blocks/i-reset/i-reset.styl',
                     'lib/**/*.css',
-                    'blocks/b-*/**/!(!*)*.ie.css',
-                    'blocks/b-*/**/!(!*)*.ie.styl',
-                    'blocks/b-*/**/!(!*)*.ie.less'
+                    'blocks/b-*/**/*.css',
+                    'blocks/b-*/**/*.styl',
+                    'blocks/b-*/**/*.less'
                 ],
                 dest: 'publish/style.ie.css',
                 errors: 'alert',
