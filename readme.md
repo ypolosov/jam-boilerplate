@@ -2,40 +2,6 @@
 
 <p>Данный документ описывает стандартную структуру папок проекта и правила формирования названий классов и файлов. Наши билд-скрипты по умолчанию настроены на работу именно с такой структурой.</p>
 
-<p>Чтобы не начинать каждый проект с нуля можно взять готовую к использованию заготовку отсюда: <a href="https://github.com/jetstyle/jam-boilerplate">jam-boilerplate</a>.</p>
-
-<h3>Базовая структура проекта</h3>
-
-<pre><code>blocks/
-    _b-block-default/
-        b-block-default.css
-        b-block-default.ie.css
-        b-block-default.js
-        b-block-default__icons.png
-    b-block-custom/
-        b-block-custom.css
-        b-block-custom.ie.css
-        b-block-custom.js
-        b-block-custom__icons.png
-    config.styl
-    style.css
-    style.ie.css
-lib/
-publish/
-tmp/
-.htaccess
-apple-touch-icon-114x114.png
-apple-touch-icon-144x144.png
-apple-touch-icon-57x57.png
-apple-touch-icon-72x72.png
-apple-touch-icon.png
-crossdomain.xml
-favicon.ico
-Gruntfile.js
-index.html
-robots.txt
-</code></pre>
-
 <h3>Описание файлов и папок</h3>
 
 <h4 id="blocks_">blocks/</h4>
@@ -63,10 +29,7 @@ robots.txt
 <ol>
 <li>_style.css — объединенный css-файл без сжатия.</li>
 <li>_style.ie.css — объединенный css-файл для IE без сжатия.</li>
-<li>_style.min.css — сжатый css-файл.</li>
-<li>_style.ie.min.css — сжатый css-файл для IE.</li>
 <li>_script.js — объединенный js-файл.</li>
-<li>_script.min.js — сжатый объединенный js-файл.</li>
 </ol>
 
 <h4 id="tmp_">tmp/</h4>
@@ -75,30 +38,18 @@ robots.txt
 
 <h4 id="build_">Gruntfile.js</h4>
 
-<p>Build-скрипт проекта. Для использования нужно установить [https://github.com/i-akhmadullin/jet]()</p>
+<p>Build-скрипт проекта. Для использования нужно установить <a href="https://github.com/i-akhmadullin/jet">jet</a></p>
 
 <p>Для разработки и финальной сборки ресурсов настроены следующие базовые скрипты:</p>
 
 <ol>
-<li>grunt reloader — собирает ресурсы без сжатия, следит за обновлением файлов, при изменении пересохраняет файлы. Для обновления стилей без перезагрузки необходимо поставить расширение LiveReload.</li>
-<li>grunt publish — собирает и сохраняет ресурсы с максимальной степенью сжатия, предварительно очистив папку publish/. Также валидирует получившиеся css и js файлы через csslint и jshint.</li>
+<li>jet — собирает ресурсы без сжатия. </li>
+<li>jet reloader — тоже самое что и jet плюс следит за обновлением файлов, при изменении пересохраняет файлы.</li>
+<li>jet publish — собирает и сохраняет ресурсы с максимальной степенью сжатия, предварительно очистив папку publish/. Также валидирует получившиеся css и js файлы через csslint и jshint.</li>
 </ol>
 
 <p>По умолчанию watch-скрипт следит за папками blocks/ и lib/ и реагирует на изменения файлов с расширениями .css, .styl, .js в них и во вложенных папках.</p>
 
-
-
-<h4 id="_">Прочие ресурсы в корне</h4>
-
-<ul>
-<li>.htaccess — конфиг для сервера Apache с установленными настройками для GZip-сжатия, кеша и правильного выставления заголовков.</li>
-<li>apple-touch-icon-*.png — иконки для рабочего стола iOS-устройств в разных размерах.</li>
-<li>crossdomain.xml — конфиг для flash&#8217;а, запрешающий crossdomain scripting в целях безопасности.</li>
-<li>favicon.ico — фавикон.</li>
-<li>robots.txt — заготовка robots.txt.</li>
-</ul>
-
-<p>Также в корень проекта складываются созданные html-файлы.</p>
 
 <h3 id="_">Структура блоков</h3>
 
